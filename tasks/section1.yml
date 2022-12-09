@@ -20,6 +20,8 @@
       - filesystems
       - rule_1.1.1.1
 
+ubuntu2004cis_root_password: 'Space!5'
+
 - name: "SCORED | 1.1.1.1 | PATCH | Remove cramfs module"
   modprobe:
       name: cramfs
@@ -747,7 +749,7 @@
       - patch
       - rule_1.5.2
 
-- name: "SCORED | 1.5.2 | PATCH | Ensure permissions on bootloader config are configured for grub.conf"
+- name: "SCORED | 1.5.2 | PATCH | Enre permissions on bootloader config are configured for grub.conf"
   file:
       path: "/boot/grub/grub.conf"
       owner: root
