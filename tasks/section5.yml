@@ -696,27 +696,6 @@
       - patch
       - rule_5.4.1.5
 
-- name: "SCORED | 5.4.2 | PATCH | Ensure system accounts are secured"
-  command: >
-    for user in `awk -F: '($3 < 1000) {print $1 }' /etc/passwd`; do
-      if [ $user != "sync" ] && [ $user != "shutdown" ] && [ $user != "halt" ];
-      then
-        usermod -s /usr/sbin/nologin $user
-      fi
-     fi
-    done
-  changed_when: false
-  when:
-      - ubuntu2004cis_rule_5_4_2
-      - system_accounts_non_login_1.stdout
-      - system_accounts_non_login_2.stdout
-  tags:
-      - level1
-      - patch
-      - rule_5.4.2
-      - scored
-
-
 - name: "SCORED | 5.4.4 | PATCH | Ensure default user umask is 027 or more restrictive"
   block:
       - name: "SCORED | 5.4.4 | PATCH | Ensure default user umask is 027 or more restrictive - /etc/bash.bashrc"
