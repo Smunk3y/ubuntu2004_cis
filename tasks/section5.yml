@@ -716,17 +716,6 @@
       - rule_5.4.2
       - scored
 
-- name: "SCORED | 5.4.3 | PATCH | Ensure default group for the root account is GID 0"
-  command: usermod -g 0 root
-  changed_when: false
-  failed_when: false
-  when:
-      - ubuntu2004cis_rule_5_4_3
-  tags:
-      - level1
-      - patch
-      - rule_5.4.3
-      - scored
 
 - name: "SCORED | 5.4.4 | PATCH | Ensure default user umask is 027 or more restrictive"
   block:

@@ -20,8 +20,6 @@
       - filesystems
       - rule_1.1.1.1
 
-ubuntu2004cis_root_password: 'Space!5'
-
 - name: "SCORED | 1.1.1.1 | PATCH | Remove cramfs module"
   modprobe:
       name: cramfs
@@ -540,37 +538,6 @@ ubuntu2004cis_root_password: 'Space!5'
       - patch
       - rule_1.2.2
       - notimplemented
-
-- name: "SCORED | 1.3.1 | PATCH | Ensure sudo is installed"
-  apt:
-      name:
-          - sudo
-      state: present
-      install_recommends: false
-  when:
-      - ubuntu2004cis_rule_1_3_1
-  tags:
-      - level1
-      - scored
-      - sudo
-      - patch
-      - rule_1.3.1
-
-- name: "SCORED | 1.3.2 | PATCH | Ensure sudo commands use pty"
-  lineinfile:
-      dest: /etc/sudoers
-      state: present
-      regexp: '^Defaults use_pty'
-      line: 'Defaults use_pty'
-      validate: 'visudo -cf %s'
-  when:
-      - ubuntu2004cis_rule_1_3_2
-  tags:
-      - level1
-      - scored
-      - sudo
-      - patch
-      - rule_1.3.2
 
 - name: "SCORED | 1.3.3 | PATCH | Ensure sudo log file exists"
   lineinfile:
