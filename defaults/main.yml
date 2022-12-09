@@ -59,7 +59,7 @@ ubuntu2004cis_rule_1_3_3: true
 ubuntu2004cis_rule_1_4_1: true
 ubuntu2004cis_rule_1_4_2: true
 ubuntu2004cis_rule_1_5_1: true
-ubuntu2004cis_rule_1_5_1_disable_password: true
+ubuntu2004cis_rule_1_5_1_disable_password: false
 ubuntu2004cis_rule_1_5_2: true
 ubuntu2004cis_rule_1_5_3: false
 ubuntu2004cis_rule_1_5_4: true
