@@ -781,23 +781,6 @@
       - patch
       - rule_1.5.2
 
-- name: "SCORED | 1.5.3 | PATCH | Ensure authentication required for single user mode"
-  shell: "set -o pipefail;
-          if [ '{{ ubuntu2004cis_root_password }}' == 'random' ];
-          then PASSWORD=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c24); else PASSWORD='{{ ubuntu2004cis_root_password }}';
-          fi;
-          echo \"root:$PASSWORD\" | chpasswd"
-  args:
-      executable: /bin/bash
-  when:
-      - ubuntu2004cis_rule_1_5_3
-      - current_root_password.stdout | length > 0
-  tags:
-      - level1
-      - scored
-      - patch
-      - rule_1.5.3
-
 - name: "SCORED | 1.6.1 | PATCH | Ensure XD/NX support is enabled"
   shell: |
       set -o pipefail;
