@@ -186,8 +186,8 @@ ubuntu2004cis_rule_4_1_10: true
 ubuntu2004cis_rule_4_1_11: true
 ubuntu2004cis_rule_4_1_12: true
 ubuntu2004cis_rule_4_1_13: true
-ubuntu2004cis_rule_4_1_14: true
-ubuntu2004cis_rule_4_1_15: true
+ubuntu2004cis_rule_4_1_14: false
+ubuntu2004cis_rule_4_1_15: false
 ubuntu2004cis_rule_4_1_16: true
 ubuntu2004cis_rule_4_1_17: true
 ubuntu2004cis_rule_4_2_1_1: true
@@ -248,7 +248,7 @@ ubuntu2004cis_rule_5_4_2: true
 ubuntu2004cis_rule_5_4_3: true
 ubuntu2004cis_rule_5_4_4: true
 ubuntu2004cis_rule_5_4_5: true
-ubuntu2004cis_rule_5_5: true
+ubuntu2004cis_rule_5_5: false
 ubuntu2004cis_rule_5_6: false
 
 # Section 6 rules
@@ -484,4 +484,4 @@ chrony_system_user:
   Debian: _chrony
 
 ### Firewall
-ubuntu2004cis_setup_firewall: false
+ubuntu2004cis_setup_firewall: true
